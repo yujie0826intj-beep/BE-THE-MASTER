@@ -1,0 +1,12 @@
+local_registry/
+local_working/
+local_source/
+local_archive/
+runtime/
+raw_sources/
+daily_outputs/
+article_outputs/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

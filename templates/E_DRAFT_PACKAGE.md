@@ -10,6 +10,16 @@ STATUS: DRAFT
 - B_TOPIC_DECISION_CARD GO present: yes/no
 - C_EVIDENCE_PACK SUFFICIENT present: yes/no
 - D_STYLE_ROUTE_CARD present: yes/no
+- E_MICRO_SAMPLE passed by Z when required: yes/no/not required
+
+## DRAFT_MODE
+
+Choose one:
+
+- `E_MICRO_SAMPLE`
+- `E_CONTROLLED_DRAFT`
+
+If `E_CONTROLLED_DRAFT`, cite the approved micro sample or explain why it was not required.
 
 ## TITLE
 
@@ -26,6 +36,14 @@ STATUS: DRAFT
 
 | Paragraph | D route instruction used | Execution note |
 |---|---|---|
+
+## BASELINE_FLOOR_CHECK
+
+- Title and opening create counter-intuitive reader tension: yes/no
+- Draft preserves S/B abnormal-signal judgment: yes/no
+- Counterevidence appears in the article: yes/no
+- Boundary language does not flatten reading value: yes/no
+- Draft is not weaker than `BTM-V06-FINAL-001`: yes/no
 
 ## REVISION_STATUS
 

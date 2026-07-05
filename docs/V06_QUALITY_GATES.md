@@ -2,43 +2,88 @@
 
 ## Gate 1: ROOT_PATH_GATE
 
-所有新写入必须在 `<PROJECT_ROOT>`。旧 `<LEGACY_FINANCE_ROOT>` 只读。
+All new public work must stay under `<PROJECT_ROOT>`. The legacy `<LEGACY_FINANCE_ROOT>` is historical reference only.
 
-## Gate 2: TOPIC_GATE
+## Gate 2: S_STRUCTURAL_JUDGMENT_GATE
 
-B 必须输出 `GO / PIVOT / KILL`。
+S must pass `S_STRUCTURAL_JUDGMENT_GATE` before B can judge topic viability.
 
-- 无读者价值：`KILL`
-- 材料只够另一角度：`PIVOT`
-- 有现实重要性、预期差、证据路径和作者判断：`GO`
+Required:
 
-## Gate 3: EVIDENCE_GATE
+- macro/policy/industry or business-model frame,
+- normal expectation,
+- abnormal divergence,
+- at least two independent signal categories for a non-weak judgment,
+- mechanism linking signals to the judgment,
+- falsifier,
+- causal boundaries.
 
-C 必须输出 `SUFFICIENT / INSUFFICIENT`。
+If A's material is too thin, S must return `RETURN_TO_A_FOR_SOURCE_GAP`. If facts exist but S cannot form an objective professional judgment, S must return `RETURN_TO_Z_FOR_HUMAN_JUDGMENT`. B and C must not continue from a failed S gate.
 
-- 关键事实缺失：`INSUFFICIENT`
-- 数据口径冲突无法解释：`ESCALATE`
-- 证据只够解释常识：回 B
+## Gate 3: TOPIC_GATE
 
-## Gate 4: STYLE_ROUTE_GATE
+B must output `GO / PIVOT / KILL`.
 
-D 必须指定具体风格资源卡，不得用“财经 KOL 风格”这类泛称。
+- No reader value: `KILL`
+- Material supports a different angle: `PIVOT`
+- Current importance, expectation gap, evidence path, and author thesis exist: `GO`
 
-## Gate 5: DRAFT_INPUT_GATE
+## Gate 4: EVIDENCE_GATE
 
-E 必须同时收到 B、C、D 三张上游卡。缺任一张，不能写稿。
+C must output evidence sufficiency.
 
-## Gate 6: PRODUCT_REVIEW_GATE
+- Key facts missing: `INSUFFICIENT`
+- Source conflict cannot be resolved: `ESCALATE`
+- Evidence only supports common knowledge: return to B
+- Evidence supports the question with boundaries: `SUFFICIENT`
 
-F 必须同时输出：
+## Gate 5: STYLE_ROUTE_GATE
+
+D must name a concrete style-card route. Generic labels such as "finance KOL style" are not enough.
+
+If no style card fits, D must return `STYLE_ROUTE_MISSING`.
+
+## Gate 6: DRAFT_INPUT_GATE
+
+E must receive B, C, and D handoffs. If any are missing, E must not draft.
+
+## Gate 7: E_MICRO_SAMPLE_GATE
+
+For new angles, new style routes, or any route after human dissatisfaction, E must produce a micro sample before a full draft.
+
+Required:
+
+- selected title,
+- opening three paragraphs,
+- first two section headings,
+- paragraph movement,
+- evidence-boundary plan.
+
+If the micro sample does not create reader tension or preserve the S/B judgment, Z returns to D or B before a full E draft.
+
+## Gate 8: PRODUCT_REVIEW_GATE
+
+F must output both:
 
 - `PROCESS_PASS / PROCESS_FAIL`
 - `PRODUCT_PASS / PRODUCT_FAIL`
 
-## Gate 7: REWRITE_LIMIT_GATE
+`PROCESS_PASS` means the workflow is complete. `PRODUCT_PASS` means the article is a publish candidate.
 
-E 每轮最多修改一次。第二次仍不达标，必须回 B 或 C。
+F must compare the draft against the current locked baseline in `docs/V06_LOCKED_GENERATION_CHAIN.md`.
 
-## Gate 8: TWO_PRODUCT_FAIL_GATE
+A draft that is compliant but less worth reading than the baseline is `PRODUCT_FAIL`.
 
-同一选题连续两轮 `PRODUCT_FAIL`，B 必须重新判断 `PIVOT` 或 `KILL`。
+## Gate 9: REWRITE_LIMIT_GATE
+
+E may rewrite at most once per round. If the second version still fails, the route returns to B, C, or D.
+
+## Gate 10: TWO_PRODUCT_FAIL_GATE
+
+If the same topic gets two consecutive `PRODUCT_FAIL` results, B must reconsider `PIVOT` or `KILL`.
+
+## Gate 11: PRE_S_NOISE_GATE
+
+Pre-S production attempts must not be used as canonical writing inputs.
+
+They may be used only as failure examples or noise diagnostics unless Z explicitly promotes a narrow reusable rule.

@@ -30,6 +30,16 @@ STATUS: DRAFT
 - Draft momentum:
 - Publish risk:
 
+## BASELINE_COMPARISON
+
+- Compared against locked baseline: `BTM-V06-FINAL-001`
+- Title/opening tension at least baseline level: yes/no
+- Abnormal-signal judgment at least baseline level: yes/no
+- Evidence contradiction pressure at least baseline level: yes/no
+- Counterevidence handling at least baseline level: yes/no
+- Boundary language keeps reading momentum: yes/no
+- If any answer is no, explain why this is not `PRODUCT_PASS`:
+
 ## FAILURE_ATTRIBUTION
 
 | Issue | Owner | Required route |
@@ -42,3 +52,5 @@ STATUS: DRAFT
 ## PRODUCT_PASS_NOTE
 
 Only `PRODUCT_PASS` may enter publish candidate status.
+
+Human final acceptance can still reject a `PRODUCT_PASS`. If that happens, do not default to another E rewrite; route the failure to S/B/C/D by cause.

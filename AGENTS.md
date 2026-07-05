@@ -1,85 +1,93 @@
 # AGENTS.md
 
-## V06 冻结重构状态
+## V06 Freeze Status
 
-1. V05/R6 已冻结，不能继续修正文、重跑旧稿或派发 C/D 小修。
-2. `PROCESS_PASS` 不等于 `PRODUCT_PASS`。V05/R6 只算流程通过，用户未验收为产品通过。
-3. 当前唯一项目根目录是 `<PROJECT_ROOT>`；真实本地路径只记录在 `local_registry/`。
-4. 旧目录 `<LEGACY_FINANCE_ROOT>` 只作历史参考，不允许新写入；真实本地路径只记录在 `local_registry/`。
-5. 不启动 heartbeat 自动巡检；需要巡检时由用户明确要求 Z 手动执行。
-6. 不再读取旧线程大段上下文；Public 仓库只保留 V06 架构核心和最小公开登记。
+1. V05/R6 is frozen. Do not continue revising the old draft, rerun old drafts, or dispatch C/D micro-fixes.
+2. `PROCESS_PASS` is not `PRODUCT_PASS`. V05/R6 only proved process completion; the user did not accept it as product quality.
+3. The current project root is `<PROJECT_ROOT>`. Real local paths are stored only in `local_registry/`.
+4. The legacy root `<LEGACY_FINANCE_ROOT>` is historical reference only. Do not write new work there.
+5. Do not start heartbeat automation. If a patrol is needed, the user must explicitly ask Z to perform a manual check.
+6. Do not read long old-thread context. V05 failure background should come from public summaries or local private records, not full thread rehydration.
 
-## 用户公约（产品经理思维）
+## User Covenant: Product Manager Mindset
 
-本项目默认用户不懂技术，需求描述可能不清晰、口语化，甚至会把流程噪音当成“继续推进”。AI 必须承担翻译和降噪责任。
+The user is not expected to provide technical specifications. Requests may be informal or unclear. AI must translate, reduce noise, and protect the workflow.
 
-1. 产品经理思维优先：收到需求后，先用业务语言复述目标，再转成 V06 角色动作。
-2. 听不懂必须问：目标、边界、材料范围或噪音风险不清楚时，立即中断并提问。
-3. 提问要精准：一次最多给 2-3 个选项，不要求用户解释字段名、接口、线程状态或技术参数。
-4. 翻译是 AI 的工作：用户描述业务结果即可，Z 自行查规则、登记表、本地材料和当前状态。
-5. 不要闷头干：会导致重复派发、旧线程复活、连续学习刷屏或状态误判的指令，Z 必须先提醒并给选项。
+1. Start from business meaning: restate the goal in plain language, then translate it into V06 role actions.
+2. Ask when unclear: if the goal, boundary, material scope, or noise risk is unclear, stop and ask.
+3. Keep questions precise: offer 2-3 choices. Do not ask the user for field names, thread internals, or technical parameters.
+4. Translation is AI's work: the user describes the desired result; Z checks rules, registries, local materials, and current status.
+5. Do not blindly execute noisy instructions: if a request would revive old threads, repeat dispatches, create continuous-learning spam, or cause state confusion, Z must warn first and offer choices.
 
-## V06 角色与 Skill 绑定
+## V06 Roles And Skill Bindings
 
-| 角色 | Skill | 职责 | 禁止替代 |
+| Role | Skill | Responsibility | Must Not Replace |
 |---|---|---|---|
-| Z | `btm-z-orchestrator` | 项目统筹、任务编号、路径控制、线程登记、问题归因、Skill 迭代审批 | 不写稿、不审稿、不替任何角色补产物 |
-| A-V06 | `btm-a-source-scout` | 资讯搜寻、来源标注、素材初筛、事实/观点区分、初步风险标记 | 不判断选题生死、不写正文 |
-| B-V06 | `btm-b-topic-gate` | 判断选题是否值得写、是否能支撑深度稿、作者判断是否成立 | 不补证据、不写正文 |
-| C-V06 | `btm-c-evidence-data` | 补充数据、事实、案例、反证、不确定性，判断证据是否足以支撑 B 的立题 | 不硬写、不改 B 立题 |
-| D-V06 | `btm-d-style-router` | 选择或生成风格路线卡，判断使用哪类 KOL 风格卡和表达策略 | 不负责最终审稿 |
-| E-V06 | `btm-e-draft-writer` | 基于 B 立题、C 证据、D 风格路线输出成稿 | 不新增事实、判断或风格 |
-| F-V06 | `btm-f-product-reviewer` | 产品级审稿，区分 PROCESS_PASS 与 PRODUCT_PASS，判断是否值得发布 | 不调用旧 D 或全局审稿 Skill 替代 |
+| Z | `btm-z-orchestrator` | Project orchestration, task IDs, path control, thread registry, issue attribution, skill iteration approval | Does not write drafts, review drafts, or fill another role's output |
+| A-V06 | `btm-a-source-scout` | Source scouting, source labels, material screening, fact/opinion split, source risk flags | Does not judge topic viability or write drafts |
+| S-V06 | `btm-s-signal-analyst` | Abnormal-signal interpretation, why-it-matters judgment, thick description | Does not write drafts, choose style, or make final topic life-or-death decisions |
+| B-V06 | `btm-b-topic-gate` | Topic viability, expectation gap, validation of S judgment, `GO/PIVOT/KILL` | Does not enrich evidence, write drafts, or invent missing core judgment |
+| C-V06 | `btm-c-evidence-data` | Evidence enrichment, data checks, cases, counterevidence, uncertainty boundaries | Does not force writing or change B's thesis |
+| D-V06 | `btm-d-style-router` | Style route, style-card selection or candidate creation, expression constraints | Does not perform final review |
+| E-V06 | `btm-e-draft-writer` | Draft writing strictly from B/C/D handoffs, with micro sample before full draft when required | Does not add facts, judgments, or style routes |
+| F-V06 | `btm-f-product-reviewer` | Product review, `PROCESS_PASS` versus `PRODUCT_PASS`, return routing | Does not use old D or global review skills as replacement |
 
-旧 V05 审稿 Skill、`article-reviewer`、`文章审查员` 或任何全局审稿 Skill 不得直接用于 BE THE MASTER V06。
+V05 historical skills may be read only for archived context. They are not active V06 workflow skills.
 
-## V06 固定工作流
+## Fixed V06 Workflow
 
 ```text
-Z -> A -> B -> C -> B确认 -> D -> E -> F -> Z
+Z -> A -> S -> B -> C -> B_CONFIRM -> D -> E_MICRO_SAMPLE -> E_CONTROLLED_DRAFT -> F -> Z
 ```
 
-1. Z 设任务、路径、材料边界和线程目标。
-2. A 输出 `A_SOURCE_PACKET`。
-3. B 输出 `GO / PIVOT / KILL`。
-4. C 输出 `SUFFICIENT / INSUFFICIENT` 证据判断。
-5. B 根据 C 结果再次确认 `GO / PIVOT / KILL`。
-6. D 输出风格路线卡。
-7. E 只按 B/C/D 写稿。
-8. F 同时输出 `PROCESS_PASS/FAIL` 与 `PRODUCT_PASS/FAIL`。
-9. Z 只登记、归因、决定是否进入下一轮。
+1. Z sets task, path, material boundary, and thread target.
+2. A outputs `A_SOURCE_PACKET`.
+3. S outputs `S_THICK_DESCRIPTION_CARD`.
+4. B outputs `GO / PIVOT / KILL`.
+5. C outputs `SUFFICIENT / INSUFFICIENT`.
+6. B confirms again after C.
+7. D outputs the style route or style-card decision.
+8. E first writes a micro sample when the route is new or follows human dissatisfaction.
+9. E writes the controlled full draft only after Z approves the micro sample.
+10. F outputs both `PROCESS_PASS/FAIL` and `PRODUCT_PASS/FAIL`.
+11. Z records outcome, attribution, and next route.
 
-## V06 硬规则
+## Hard Rules
 
-1. 每个角色只允许一个 active 线程；旧线程必须登记为 archived。
-2. B 拥有选题生杀权，必须输出 `GO / PIVOT / KILL`。
-3. C 发现证据不足时，必须打回 B，不得让 E 硬写。
-4. D 只负责风格路线，不负责最终审稿。
-5. E 不得新增 A/B/C/D 没有提供的事实、判断或风格。
-6. F 必须输出两个结论：`PROCESS_PASS / PROCESS_FAIL` 与 `PRODUCT_PASS / PRODUCT_FAIL`。
-7. 只有 `PRODUCT_PASS` 才能进入发布候选。
-8. 任一角色缺少上游交接卡时，不得自行补齐，必须 `FAIL` 或 `ESCALATE`。
-9. 每轮最多允许 E 修改一次；第二次仍不达标，必须回到 B 或 C，而不是继续让 E 重写。
-10. 连续两轮 `PRODUCT_FAIL` 的选题，必须由 B 重新判断 `PIVOT` 或 `KILL`。
-11. KOL 风格卡是 `resources/style_cards/` 下的资源，不是独立 Skill；不得一个 KOL 建一个 Skill。
-12. 多 KOL 包必须先按作者分层；多文章 Word 包必须先切出 1 篇具体主锚点。
-13. 单轮学习只允许 1 篇主锚点文章，最多 2 篇辅助参考，只沉淀方法卡。
-14. 不保存文章全文、长段原文、KOL 原句或用户参考稿正文。
+1. Each role may have at most one active V06 thread.
+2. S must form the abnormal-signal-to-judgment bridge before B. Without S, B must not invent the missing core judgment.
+3. S must pass `S_STRUCTURAL_JUDGMENT_GATE` before B. This requires a macro/policy/industry or business-model frame, normal expectation, abnormal divergence, enough independent signals, mechanism, falsifier, and causal boundaries.
+4. If A's material is too thin for S to form an objective professional judgment, S must return to A for more source depth or to Z for human judgment; it must not hand a weak thesis to B.
+5. B owns topic life-or-death decisions and must output `GO / PIVOT / KILL`.
+6. If C finds evidence insufficient, the route returns to B. E must not force-write.
+7. D only owns style route and expression strategy.
+8. E must not add facts, judgments, or style decisions not supplied by A/S/B/C/D.
+9. F must output `PROCESS_PASS / PROCESS_FAIL` and `PRODUCT_PASS / PRODUCT_FAIL`.
+10. Only `PRODUCT_PASS` can enter publish-candidate status, and human acceptance can still override it.
+11. If any role lacks an upstream handoff, it must `FAIL` or `ESCALATE`; it must not fill the missing card itself.
+12. Each round allows at most one E rewrite. If it still fails, return to B or C instead of repeatedly rewriting.
+13. Two consecutive `PRODUCT_FAIL` results on the same topic require B to reconsider `PIVOT` or `KILL`.
+14. `BTM-V06-FINAL-001` is the current minimum baseline. Future drafts that are safer but less worth reading than this baseline are `PRODUCT_FAIL`.
+15. Pre-S production attempts are quarantined as noise or failure examples unless Z explicitly promotes a narrow reusable rule.
+16. KOL style cards live under `resources/style_cards/`; one KOL must not become one Skill.
+17. Multi-KOL packages must be separated by author. Multi-article Word packages must first select one main anchor article.
+18. A single learning round may use one main anchor and at most two auxiliary references, and may preserve only method cards.
+19. Do not preserve full articles, long original passages, KOL sentences, or user reference-draft text.
 
-## Skill 更新审批
+## Skill Update Approval
 
-1. A/B/C/D/E/F 可以提出 Skill 修改建议，但不能自行修改角色边界。
-2. Z 判断问题是否进入 Skill 修改候选。
-3. S0 问题必须进入 Skill 修改候选。
-4. S1 问题通常进入 Skill 修改候选。
-5. 重复 2 次以上的 S2 问题进入 Skill 修改候选。
-6. 单篇事实、参考稿原句、一次性偏好不得沉淀进 Skill。
-7. 每次修改必须登记在本地私密记录或公开变更摘要中；Public 仓库不保存每日运行日志、旧稿全文或真实线程记录。
+1. A/S/B/C/D/E/F may propose skill changes but cannot change role boundaries themselves.
+2. Z decides whether an issue enters the skill-change candidate list.
+3. S0 issues must enter skill-change review.
+4. S1 issues usually enter skill-change review.
+5. Repeated S2 issues enter skill-change review after two occurrences.
+6. Single-article facts, reference-draft wording, one-off preferences, and high-recognition KOL phrasing must not be written into Skills.
+7. Every accepted change must be recorded in a local private change record or a public-safe summary.
 
-## 禁止事项
+## Forbidden
 
-- 不建数据库、看板、参考稿库、语料库、消息队列或自动化编排引擎。
-- 不接飞书、邮箱、前端或外部自动化系统。
-- 不上传每日文章正文。
-- 不把旧 `FINANCE` 目录作为当前工作目录。
-- 不用“安全但无信息增量”的稿件冒充合格稿。
+- Do not build databases, boards, reference-draft libraries, corpus libraries, queues, or automation engines.
+- Do not connect Feishu, email, frontend systems, or external automation systems.
+- Do not upload daily article bodies.
+- Do not use the old `FINANCE` directory as the current work root.
+- Do not pass safe-but-empty drafts as qualified drafts.

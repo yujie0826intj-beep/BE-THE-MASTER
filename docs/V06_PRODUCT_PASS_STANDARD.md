@@ -1,32 +1,52 @@
 # V06_PRODUCT_PASS_STANDARD
 
-## 核心口径
+## Core Distinction
 
-`PROCESS_PASS` 只说明流程材料齐全、角色没有越权、门禁没有明显缺项。
+`PROCESS_PASS` only means the workflow has the required cards, roles stayed in boundary, and no obvious gate is missing.
 
-`PRODUCT_PASS` 说明稿件真正值得进入发布候选。
+`PRODUCT_PASS` means the article is genuinely strong enough to become a publish candidate.
 
-## PRODUCT_PASS 必须同时满足
+Human acceptance can still reject a `PRODUCT_PASS`.
 
-1. 选题重要：读者能理解为什么现在必须看。
-2. 预期差清楚：不是重复公开常识。
-3. 证据有密度：来源、数字、时间线、反证和不确定性足够支撑判断。
-4. 作者判断成立：不是把材料整理成说明书。
-5. 风格路线自然：读不出模板和流程痕迹。
-6. 正文有运动：段落之间有推进，不是风险边界堆叠。
-7. 发布风险可控：强判断有证据，不确定处有边界。
+## PRODUCT_PASS Must Satisfy
 
-## 常见失败
+1. Topic importance: the reader can understand why this matters now.
+2. Expectation gap: the article is not repeating public common sense.
+3. Reporter judgment: the article is built on a clear judgment formed from an abnormal signal, not on a post-hoc writing angle.
+4. Evidence density: sources, numbers, timeline, counterevidence, and uncertainty boundaries support the thesis.
+5. Author thesis: the draft is not just a source summary.
+6. Natural style route: the article does not show template or workflow traces.
+7. Draft movement: paragraphs advance the argument instead of piling up risk boundaries.
+8. Publish risk control: strong claims have evidence; uncertain claims have boundaries.
 
-- `PROCESS_PASS / PRODUCT_FAIL`：流程齐全但不好看、不值得读。
-- `PROCESS_FAIL / PRODUCT_FAIL`：上游缺卡、证据不足或角色越权。
-- `PROCESS_FAIL / PRODUCT_PASS` 不允许出现；流程缺失时不能进入发布候选。
+## Current Minimum Baseline
 
-## F 的最低输出
+The current floor is `BTM-V06-FINAL-001`.
 
-F 必须给出：
+Future drafts must be at least as strong as that baseline in:
 
-- 两个 PASS/FAIL 结论。
-- 主要失败归因：A/B/C/D/E/Z。
-- 是否允许 E 修改一次。
-- 是否必须回 B 或 C。
+- title and opening tension,
+- abnormal-signal judgment,
+- evidence contradiction pressure,
+- counterevidence handling,
+- causal boundary control,
+- reader value.
+
+If a draft is safer but less interesting than the baseline, it is `PRODUCT_FAIL`.
+
+## Common Failure Types
+
+- `PROCESS_PASS / PRODUCT_FAIL`: the process is complete, but the article is not worth reading or publishing.
+- `PROCESS_FAIL / PRODUCT_FAIL`: upstream card, evidence, or role boundary is missing.
+- `PROCESS_FAIL / PRODUCT_PASS`: not allowed. A process-incomplete article cannot enter publish-candidate status.
+
+## Minimum F Output
+
+F must provide:
+
+- both PASS/FAIL conclusions
+- main failure attribution: A/S/B/C/D/E/Z
+- whether the failure is due to missing S judgment formation
+- whether one E rewrite is allowed
+- whether the route must return to B or C
+- whether human final acceptance is still required

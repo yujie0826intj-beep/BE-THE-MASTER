@@ -8,12 +8,26 @@ STATUS: DRAFT
 ## INPUT_CHECK
 
 - A_SOURCE_PACKET present: yes/no
+- S_THICK_DESCRIPTION_CARD present: yes/no
+- S_STRUCTURAL_JUDGMENT_GATE passed: yes/no
 - B_TOPIC_DECISION_CARD is GO: yes/no
+
+If S gate did not pass, stop and return to Z/B. Do not search for data to support an unformed judgment.
 
 ## EVIDENCE_TABLE
 
 | B thesis / claim | Evidence | Source ID | Date | Strength | Gap |
 |---|---|---|---|---|---|
+
+## STRUCTURAL_JUDGMENT_TEST
+
+- S structural frame being tested:
+- Normal expectation:
+- Abnormal divergence:
+- Mechanism to verify or falsify:
+- Evidence that supports:
+- Evidence that weakens:
+- Boundary C must preserve:
 
 ## DATA_POINTS
 

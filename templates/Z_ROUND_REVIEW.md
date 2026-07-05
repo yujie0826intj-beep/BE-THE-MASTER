@@ -17,10 +17,12 @@ STATUS: DRAFT
 | Role | Required artifact | Status | Notes |
 |---|---|---|---|
 | A | A_SOURCE_PACKET |  |  |
+| S | S_THICK_DESCRIPTION_CARD |  |  |
 | B | B_TOPIC_DECISION_CARD |  |  |
 | C | C_EVIDENCE_PACK |  |  |
 | D | D_STYLE_ROUTE_CARD |  |  |
-| E | E_DRAFT_PACKAGE |  |  |
+| E micro | E_MICRO_SAMPLE |  |  |
+| E controlled | E_CONTROLLED_DRAFT |  |  |
 | F | F_PRODUCT_REVIEW_REPORT |  |  |
 
 ## Z_DECISION
@@ -35,6 +37,13 @@ STATUS: DRAFT
 ## SKILL_CHANGE_DECISION
 
 - Upgrade Skill / SOP-template only / Case only
+
+## BASELINE_AND_NOISE_DECISION
+
+- Compared against `BTM-V06-FINAL-001`: yes/no
+- Pre-S noise touched: yes/no
+- If touched, why:
+- Should any old pre-S artifact be promoted as reusable rule: yes/no
 
 ## NEXT_ACTION
 

@@ -13,6 +13,7 @@ C-V06 strengthens or rejects the evidence base. C does not write the final artic
 
 - A_SOURCE_PACKET.
 - B_TOPIC_DECISION_CARD with `GO`.
+- S_THICK_DESCRIPTION_CARD with a passed `S_STRUCTURAL_JUDGMENT_GATE`.
 - Allowed local material or search permission.
 
 ## Output: C_EVIDENCE_PACK
@@ -28,6 +29,8 @@ Include:
 
 ## Hard Gates
 
+- If S has no passed `S_STRUCTURAL_JUDGMENT_GATE`, return to Z/B; do not search for data to support an unformed judgment.
+- C verifies or falsifies S/B's structural judgment. C must not use isolated facts to prop up a thin or one-sided thesis.
 - If evidence cannot support B's thesis, return `RETURN_TO_B_EVIDENCE_INSUFFICIENT`.
 - If core data conflicts and cannot be reconciled, return `ESCALATE_TO_Z_DATA_CONFLICT`.
 - Do not let E write around missing evidence.

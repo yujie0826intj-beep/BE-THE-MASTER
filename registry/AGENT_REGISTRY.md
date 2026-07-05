@@ -12,13 +12,14 @@ Legacy root alias: `<LEGACY_FINANCE_ROOT>`; historical reference only, no new wr
 
 | Role | Public session label | Thread ref | Skill | Status | Current task | Notes |
 |---|---|---|---|---|---|---|
-| Z | Z_ORCHESTRATOR | local-only | `btm-z-orchestrator` | idle | V06-FREEZE-RESTRUCTURE-20260703 | Current orchestration entry; no draft production |
-| A-V06 | unassigned | none | `btm-a-source-scout` | idle/unassigned | none | Create only after user starts V06 test |
-| B-V06 | unassigned | none | `btm-b-topic-gate` | idle/unassigned | none | Owns GO/PIVOT/KILL |
-| C-V06 | unassigned | none | `btm-c-evidence-data` | idle/unassigned | none | Must return to B when evidence is insufficient |
-| D-V06 | unassigned | none | `btm-d-style-router` | idle/unassigned | none | Style route only, not final review |
-| E-V06 | unassigned | none | `btm-e-draft-writer` | idle/unassigned | none | One revision max per round |
-| F-V06 | unassigned | none | `btm-f-product-reviewer` | idle/unassigned | none | Must output PROCESS and PRODUCT conclusions |
+| Z | Z_ORCHESTRATOR | local-only | `btm-z-orchestrator` | idle/accepted | BTM-V06-CHAIN-LOCK-001 | Post-S chain locked as current baseline; pre-S noise quarantined |
+| A-V06 | A_SOURCE_SCOUT_01 | local-only | `btm-a-source-scout` | idle/registered | none | Real thread id stored only in `local_registry/`; no task dispatched |
+| S-V06 | S_SIGNAL_ANALYST_01 | local-only | `btm-s-signal-analyst` | idle/accepted | BTM-V06-SB-REPLAY-002 | S structural gate passed; B small replay allowed |
+| B-V06 | B_TOPIC_GATE_01 | local-only | `btm-b-topic-gate` | idle/accepted | BTM-V06-B-CONFIRM-001 | B_CONFIRM completed: GO on narrowed question; D allowed only after user confirmation |
+| C-V06 | C_EVIDENCE_DATA_01 | local-only | `btm-c-evidence-data` | idle/accepted | BTM-V06-C-DIAGNOSTIC-001 | C diagnostic completed: EVIDENCE_SUPPORTS_NARROWER_PIVOT; no B_CONFIRM/D/E/F dispatch |
+| D-V06 | D_STYLE_ROUTER_01 | local-only | `btm-d-style-router` | idle/accepted | BTM-V06-D-REROUTE-001 | D reroute completed: STYLE_ROUTE_READY; stopped before E |
+| E-V06 | E_DRAFT_WRITER_01 | local-only | `btm-e-draft-writer` | idle/accepted | BTM-V06-E-CONTROLLED-DRAFT-001 | Controlled full draft passed Z gate; stopped before F |
+| F-V06 | F_PRODUCT_REVIEWER_01 | local-only | `btm-f-product-reviewer` | idle/accepted | BTM-V06-F-REVIEW-001 | F completed: PROCESS_PASS and PRODUCT_PASS; returned to Z for human final acceptance |
 
 ## V05/R6 Freeze
 
@@ -47,7 +48,7 @@ Legacy root alias: `<LEGACY_FINANCE_ROOT>`; historical reference only, no new wr
 3. Do not revive old abnormal or recovery B threads.
 4. Z may perform at most one state-changing action per patrol.
 5. Do not run heartbeat automation.
-6. New V06 tests must start from `Z -> A`, not directly from E drafting.
+6. New V06 tests must start from `Z -> A -> S`, not directly from B or E drafting.
 
 ## Private Registry
 

@@ -1,36 +1,37 @@
 # V06_SKILL_ITERATION_PROTOCOL
 
-## 进入 Skill 迭代的条件
+## When An Issue Enters Skill Iteration
 
-- S0：必须进入。
-- S1：通常进入。
-- S2：同类重复两次进入。
-- S3：默认只记录。
+- S0: must enter skill iteration.
+- S1: usually enters skill iteration.
+- S2: enters skill iteration after two repeated occurrences.
+- S3: record by default; do not automatically change skills.
 
-## 不得沉淀
+## Must Not Be Deposited Into Skills
 
-- 单篇事实。
-- 参考稿原句。
-- 用户一次性偏好。
-- KOL 高识别表达。
-- 为修一篇稿临时制造的禁词清单。
+- Single-article facts.
+- Reference-draft sentences.
+- One-off user preferences.
+- High-recognition KOL phrasing.
+- Temporary forbidden-word lists created only to repair one draft.
 
-## 可沉淀
+## Can Be Deposited
 
-- 角色边界。
-- 交接字段。
-- 可跨题复用的门槛。
-- 路由规则。
-- 失败归因方法。
+- Role boundaries.
+- Handoff fields.
+- Cross-topic gates.
+- Routing rules.
+- Failure-attribution methods.
+- Reusable expression constraints that are not tied to a single article.
 
-## 审批流程
+## Approval Flow
 
-1. 角色提出问题或 Z 发现失败。
-2. Z 记录到本地私密问题记录，必要时整理成 Public 可公开摘要。
-3. Z 判断是否修改 Skill/SOP/模板。
-4. 修改后写入本地私密变更记录，必要时同步到 Public 可公开摘要。
-5. 下一轮用同类压力点验证。
+1. A role proposes an issue or Z identifies a failure.
+2. Z records it in local private records; if needed, Z creates a public-safe summary.
+3. Z decides whether to modify a Skill, SOP, template, or style card.
+4. After changes, Z records the change locally and, when safe, in a public summary.
+5. The next similar round tests whether the change works.
 
-## V06 特别规则
+## V06 Special Rule
 
-旧 V05 审稿链不再升级为最终审稿 Skill。最终审稿统一迁移到 `btm-f-product-reviewer`。
+Old V05 review chains are not upgraded into final review Skills. Final review is owned by `btm-f-product-reviewer`.

@@ -11,8 +11,8 @@ E-V06 writes the draft. E does not add facts, create new arguments, change the t
 
 ## Inputs
 
-- B_TOPIC_DECISION_CARD with confirmed `GO`.
-- C_EVIDENCE_PACK marked `SUFFICIENT`.
+- B_CONFIRM_CARD with `CONFIRM_GO_TO_D` and the final question/thesis boundary.
+- C_EVIDENCE_PACK marked `SUFFICIENT`, or a Z-approved evidence diagnostic accepted by B_CONFIRM.
 - D_STYLE_ROUTE_CARD.
 - Approved E_MICRO_SAMPLE when the route is new, repaired, or follows human dissatisfaction.
 - Z dispatch card.
@@ -30,9 +30,9 @@ Include:
 
 ## Hard Gates
 
-- Missing B/C/D input means `FAIL_UPSTREAM_MISSING`.
+- Missing B_CONFIRM/C/D input means `FAIL_UPSTREAM_MISSING`.
 - If Z requires `E_MICRO_SAMPLE`, do not write a full draft until Z approves the sample.
-- Do not add facts not present in A/C.
+- Do not add facts not present in the accepted C evidence handoff.
 - Do not add author judgment not present in B.
 - Do not add style rules not present in D.
 - Do not produce a safe explainer that is weaker than the locked baseline.
@@ -53,4 +53,4 @@ Do not continue to the full draft until Z approves the sample.
 
 ## Handoff
 
-Send the draft package to F-V06 for product review.
+Send the controlled draft package to F-V06 only after any required micro sample has passed Z review.

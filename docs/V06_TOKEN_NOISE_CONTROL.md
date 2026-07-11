@@ -11,6 +11,7 @@ Spend tokens on topic judgment, evidence, style route, and product quality. Avoi
 3. Do not read long old-thread context.
 4. Historical failures should come from local private records or public-safe summaries, not full old thread bodies.
 5. Each patrol or check may perform at most one state-changing action.
+6. A role thread bound to the wrong root, carrying prior article rounds, or already context-compacted must be archived before another production task.
 
 ## Locked Input Priority
 
@@ -39,6 +40,8 @@ Pre-S production attempts are noise by default for future production. Use them o
 - E may rewrite once per round at most.
 - E must use a micro sample before full drafting when the route is new or follows human dissatisfaction.
 - F review should be short and decisive: product decision first, explanation second.
+- F should read B_CONFIRM, a compact C evidence handoff, D route, E micro gate, and E controlled draft. Do not rehydrate full A/S/B/C/D/E thread history.
+- A new production round should use clean role threads under the effective root. Archive context-heavy predecessors instead of reusing them indefinitely.
 
 ## High-Noise Signals
 
@@ -49,6 +52,7 @@ Pre-S production attempts are noise by default for future production. Use them o
 - A role tries to fill another role's missing output.
 - A later role reads pre-S drafts as positive examples.
 - E writes a full draft without a passed micro sample on a new or repaired route.
+- A role task is resumed from the damaged root or after context compaction.
 
 ## Z Handling
 

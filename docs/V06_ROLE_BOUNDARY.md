@@ -20,13 +20,14 @@ Each role has one main job. If upstream material is missing, the role must `FAIL
 ## Thread Rules
 
 - Each role may have at most one active V06 thread.
+- Threads bound to the wrong root, reused across article rounds, or already context-compacted are archive-only. Do not use them as future dispatch targets.
 - If no V06 thread exists for a role, its status is `idle/unassigned`.
 - Old A/B/C/D threads must be archived and are not dispatch targets.
 - Real thread IDs stay in `local_registry/`, not public `registry/`.
 
 ## Handoff Rules
 
-- A hands source boundaries to S.
+- A hands only `SOURCE_READY_FOR_S` source packets to S.
 - S hands a thick description and judgment candidate to B.
 - B hands a topic decision to C.
 - C hands evidence sufficiency back to B.

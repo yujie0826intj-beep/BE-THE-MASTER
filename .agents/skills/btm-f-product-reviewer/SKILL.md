@@ -11,10 +11,11 @@ F-V06 is the final product reviewer. F reviews whether the piece is both process
 
 ## Inputs
 
-- B_TOPIC_DECISION_CARD.
-- C_EVIDENCE_PACK.
+- B_CONFIRM_CARD.
+- C_EVIDENCE_PACK or a Z-approved compact evidence handoff.
 - D_STYLE_ROUTE_CARD.
-- E_DRAFT_PACKAGE.
+- E_MICRO_SAMPLE gate result when required.
+- E_CONTROLLED_DRAFT package.
 
 ## Required Conclusions
 
@@ -28,7 +29,7 @@ Always output both:
 ## Review Axes
 
 - Topic importance and reader value.
-- Whether the draft is built on a clear abnormal-signal-to-judgment bridge, as validated by B.
+- Whether the draft preserves the abnormal-signal-to-judgment bridge recorded in B_CONFIRM.
 - Evidence density and contradiction pressure.
 - Author judgment clarity.
 - Style execution without generic explainer voice.
@@ -38,13 +39,14 @@ Always output both:
 
 ## Hard Gates
 
-- Missing upstream cards means `PROCESS_FAIL`.
+- Missing B_CONFIRM, C, D, E, or a required micro-sample gate means `PROCESS_FAIL`.
 - If the draft is accurate but lacks a real reporter judgment, output `PROCESS_PASS / PRODUCT_FAIL` and attribute the failure to missing S/B judgment formation.
 - If the draft only satisfies gates but is not worth reading, output `PROCESS_PASS / PRODUCT_FAIL`.
 - If the draft is safer but less interesting than `BTM-V06-FINAL-001`, output `PROCESS_PASS / PRODUCT_FAIL`.
 - If E skipped a required micro sample, output `PROCESS_FAIL`.
 - If a topic receives two consecutive `PRODUCT_FAIL`, route to B for PIVOT/KILL.
 - Do not use legacy V05 review skills or global review skills for V06 final review.
+- Do not read full role-thread history. Prefer the latest locked handoffs and a compact C evidence pack.
 
 ## Baseline Floor
 

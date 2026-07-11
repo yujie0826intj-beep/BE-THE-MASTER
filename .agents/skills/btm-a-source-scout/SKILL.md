@@ -1,6 +1,6 @@
 ---
 name: btm-a-source-scout
-description: Use when BE THE MASTER V06 needs source scouting, source labeling, material screening, fact/opinion separation, source risk flags, or a source packet before topic judgment.
+description: Use when BE THE MASTER V06 needs source scouting, source labeling, material screening, fact/opinion separation, source risk flags, or a source packet before signal analysis.
 ---
 
 # btm-a-source-scout
@@ -25,14 +25,15 @@ Produce only:
 - Conflict points and uncertainty flags.
 - Source risk: official, media, KOL, market data, rumor, unsupported.
 - Missing evidence list.
+- Exactly one route decision: `SOURCE_READY_FOR_S`, `SOURCE_INSUFFICIENT`, or `ESCALATE_TO_Z_SCOPE_MISSING`.
 
 ## Hard Gates
 
 - If material scope is unclear, return `ESCALATE_TO_Z_SCOPE_MISSING`.
-- If sources are too thin for B to judge, return `SOURCE_INSUFFICIENT`.
+- If sources are too thin for S to identify a structural frame, abnormal divergence, and evidence path, return `SOURCE_INSUFFICIENT`.
 - Do not save full article text or long quoted passages.
 - Do not infer facts not present in the supplied or allowed sources.
 
 ## Handoff
 
-Send A packet to B-V06. B owns GO/PIVOT/KILL; A only supplies source conditions.
+Send `SOURCE_READY_FOR_S` packets to S-V06. All other decisions return to Z. A must never skip S and hand a new source packet directly to B.

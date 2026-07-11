@@ -16,6 +16,7 @@ Z -> A -> S -> B -> C -> B_CONFIRM -> D -> E_MICRO_SAMPLE -> E_CONTROLLED_DRAFT 
    - Search or organize only the allowed material scope.
    - Output `A_SOURCE_PACKET.md`.
    - Separate facts, opinions, user feedback, and unverified claims.
+   - Only `SOURCE_READY_FOR_S` continues to S. A must never skip S and dispatch directly to B.
 
 3. `S_SIGNAL_ANALYSIS`
    - Turn A's materials into abnormal-signal and significance analysis.
@@ -37,6 +38,7 @@ Z -> A -> S -> B -> C -> B_CONFIRM -> D -> E_MICRO_SAMPLE -> E_CONTROLLED_DRAFT 
 
 6. `B_CONFIRM`
    - Reconfirm the topic after C.
+   - Output `B_CONFIRM_CARD.md` with the final question, thesis boundary, evidence boundary, and D-entry decision.
    - If evidence does not support the original angle, choose `PIVOT` or `KILL`.
 
 7. `D_STYLE`

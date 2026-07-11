@@ -7,17 +7,18 @@ It does not store article drafts, raw news, private source packs, local thread I
 ## V06 Architecture
 
 ```text
-Z -> A -> B -> C -> B_CONFIRM -> D -> E -> F -> Z
+Z -> A -> S -> B -> C -> B_CONFIRM -> D -> E_MICRO_SAMPLE -> E_CONTROLLED_DRAFT -> F -> Z
 ```
 
 | Role | Responsibility | Skill |
 |---|---|---|
 | Z | Orchestration, path control, registry, issue attribution, skill approval | `btm-z-orchestrator` |
 | A-V06 | Source scouting, source labeling, fact/opinion separation, risk flags | `btm-a-source-scout` |
+| S-V06 | Abnormal-signal interpretation and reporter-judgment formation | `btm-s-signal-analyst` |
 | B-V06 | Topic viability, expectation gap, author thesis, GO/PIVOT/KILL | `btm-b-topic-gate` |
 | C-V06 | Evidence enrichment, data checks, counterevidence, sufficiency | `btm-c-evidence-data` |
 | D-V06 | Style routing and KOL style-card selection | `btm-d-style-router` |
-| E-V06 | Draft writing from confirmed B/C/D inputs | `btm-e-draft-writer` |
+| E-V06 | Micro sample and controlled draft from confirmed B/C/D inputs | `btm-e-draft-writer` |
 | F-V06 | Product review, PROCESS_PASS vs PRODUCT_PASS | `btm-f-product-reviewer` |
 
 ## Core Rule
@@ -32,6 +33,7 @@ Only `PRODUCT_PASS` may enter publish-candidate status.
 AGENTS.md
 docs/
   V06_ARCHITECTURE.md
+  V06_LOCKED_GENERATION_CHAIN.md
   V06_WORKFLOW.md
   V06_ROLE_BOUNDARY.md
   V06_QUALITY_GATES.md
@@ -40,7 +42,9 @@ docs/
   V06_SKILL_ITERATION_PROTOCOL.md
 templates/
   A_SOURCE_PACKET.md
+  S_THICK_DESCRIPTION_CARD.md
   B_TOPIC_DECISION_CARD.md
+  B_CONFIRM_CARD.md
   C_EVIDENCE_PACK.md
   D_STYLE_ROUTE_CARD.md
   E_DRAFT_PACKAGE.md
@@ -48,12 +52,14 @@ templates/
   Z_ROUND_REVIEW.md
 resources/
   style_cards/KOL_CARD_TEMPLATE.md
+  style_cards/BTM_STYLE_001_PUBLIC_RISK_SIGNAL_REVIEW.md
 registry/
   AGENT_REGISTRY.md
   THREAD_ARCHIVE.md
 .agents/skills/
   btm-z-orchestrator/
   btm-a-source-scout/
+  btm-s-signal-analyst/
   btm-b-topic-gate/
   btm-c-evidence-data/
   btm-d-style-router/

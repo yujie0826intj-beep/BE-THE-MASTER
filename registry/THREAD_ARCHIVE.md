@@ -17,5 +17,6 @@ This file is safe for a public repository. Real thread IDs, local paths, session
 | Scope | Status | Note |
 |---|---|---|
 | V05/R6 historical threads | archived | Not a dispatch target |
-| V06 Z orchestration | framework ready | Manual start only |
-| V06 A-F execution | not started | No task created in this public landing |
+| V06 Z orchestration | chain locked / manual start | No heartbeat; new work requires explicit user start |
+| V06 canonical execution | completed and closed | Post-S baseline reached F and returned to human acceptance |
+| Previous V06 role threads | archived pending clean replacement | Wrong-root or context-heavy threads are not future dispatch targets |

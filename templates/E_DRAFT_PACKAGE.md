@@ -7,8 +7,8 @@ STATUS: DRAFT
 
 ## INPUT_CHECK
 
-- B_TOPIC_DECISION_CARD GO present: yes/no
-- C_EVIDENCE_PACK SUFFICIENT present: yes/no
+- B_CONFIRM_CARD with CONFIRM_GO_TO_D present: yes/no
+- C evidence pack SUFFICIENT or approved diagnostic present: yes/no
 - D_STYLE_ROUTE_CARD present: yes/no
 - E_MICRO_SAMPLE passed by Z when required: yes/no/not required
 

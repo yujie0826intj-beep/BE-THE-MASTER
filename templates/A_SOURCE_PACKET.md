@@ -2,7 +2,7 @@
 
 TASK_ID:
 FROM: A-V06 / btm-a-source-scout
-TO: B-V06
+TO: S-V06 or Z
 STATUS: DRAFT
 
 ## SOURCE_SCOPE
@@ -47,4 +47,6 @@ STATUS: DRAFT
 
 ## A_DECISION
 
-- `SOURCE_READY_FOR_B` / `SOURCE_INSUFFICIENT` / `ESCALATE_TO_Z_SCOPE_MISSING`
+- `SOURCE_READY_FOR_S` / `SOURCE_INSUFFICIENT` / `ESCALATE_TO_Z_SCOPE_MISSING`
+
+Only `SOURCE_READY_FOR_S` may continue to S. A must not hand a new source packet directly to B.

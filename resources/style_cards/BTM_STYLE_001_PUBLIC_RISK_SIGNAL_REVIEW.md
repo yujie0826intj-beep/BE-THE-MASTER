@@ -3,9 +3,9 @@ style_card_id: BTM_STYLE_001_PUBLIC_RISK_SIGNAL_REVIEW
 name_cn: Public Risk Signal Review
 owner: D-V06
 approved_by: Z
-status: active_local
+status: active
 created_for: BTM-V06-ROUND-001
-github_commit_pending: true
+github_commit_pending: false
 ---
 
 # BTM_STYLE_001_PUBLIC_RISK_SIGNAL_REVIEW
@@ -20,7 +20,7 @@ OWNER:
 D-V06 style router
 
 STATUS:
-active_local
+active
 
 ## 1. Use Case
 

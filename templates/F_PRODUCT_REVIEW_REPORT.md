@@ -7,10 +7,11 @@ STATUS: DRAFT
 
 ## INPUT_CHECK
 
-- B card present: yes/no
+- B_CONFIRM_CARD present: yes/no
 - C pack present: yes/no
 - D route present: yes/no
-- E draft package present: yes/no
+- Required E micro-sample gate present: yes/no/not required
+- E controlled draft package present: yes/no
 
 ## REQUIRED_CONCLUSIONS
 

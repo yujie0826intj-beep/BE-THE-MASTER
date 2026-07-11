@@ -20,6 +20,7 @@ STATUS: DRAFT
 | S | S_THICK_DESCRIPTION_CARD |  |  |
 | B | B_TOPIC_DECISION_CARD |  |  |
 | C | C_EVIDENCE_PACK |  |  |
+| B confirm | B_CONFIRM_CARD |  |  |
 | D | D_STYLE_ROUTE_CARD |  |  |
 | E micro | E_MICRO_SAMPLE |  |  |
 | E controlled | E_CONTROLLED_DRAFT |  |  |

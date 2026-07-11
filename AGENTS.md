@@ -73,6 +73,7 @@ Z -> A -> S -> B -> C -> B_CONFIRM -> D -> E_MICRO_SAMPLE -> E_CONTROLLED_DRAFT 
 17. Multi-KOL packages must be separated by author. Multi-article Word packages must first select one main anchor article.
 18. A single learning round may use one main anchor and at most two auxiliary references, and may preserve only method cards.
 19. Do not preserve full articles, long original passages, KOL sentences, or user reference-draft text.
+20. A role thread bound to the legacy/damaged root, reused across article rounds, or already context-compacted must be archived before the next production round. Create its replacement only under the effective root and only when a role task is explicitly authorized.
 
 ## Skill Update Approval
 

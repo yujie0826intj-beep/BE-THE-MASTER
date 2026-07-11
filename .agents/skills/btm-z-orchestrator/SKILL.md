@@ -39,9 +39,10 @@ Z may stop the route at any point if an upstream handoff is missing or a role ex
 
 - Any old A/B/C/D thread is used as an active target.
 - Any role writes outside the current project root.
+- Any production role thread is bound to the damaged root, carries earlier article rounds, or has already context-compacted.
 - B is asked to judge topic viability before S has formed the abnormal-signal-to-judgment bridge.
 - S outputs `JUDGMENT_READY_FOR_B` without a passed `S_STRUCTURAL_JUDGMENT_GATE`.
-- S cannot form a structural judgment from macro/policy/industry/business-model context and Z has not routed to A补材 or human judgment.
+- S cannot form a structural judgment from macro/policy/industry/business-model context and Z has not routed to A for source depth or to human judgment.
 - E is asked to write without B, C, and D handoffs.
 - F reports only `PROCESS_PASS` without a `PRODUCT_PASS` decision.
 - A second E rewrite is requested without returning to B or C.
@@ -81,6 +82,7 @@ Z must preserve:
 - E micro sample before full draft when the route is new or repaired,
 - F comparison against `BTM-V06-FINAL-001`,
 - human final acceptance after F `PRODUCT_PASS`.
+- compact role handoffs instead of full-thread rehydration.
 
 If a human rejects a draft after F `PRODUCT_PASS`, Z must not automatically loop D/E/F. Route by cause:
 
@@ -101,4 +103,5 @@ Z may read them only as failure diagnostics or to promote a narrow reusable rule
 - Each V06 role may have at most one active thread.
 - If no V06 role thread exists yet, keep the role `idle/unassigned`.
 - Archive old role threads in `registry/THREAD_ARCHIVE.md`.
+- Archive wrong-root or context-heavy role threads before the next production round; leave roles `idle/unassigned` until an explicit task authorizes clean replacements.
 - Record all V05/R6 follow-up attempts as blocked unless the user explicitly starts V06 testing.

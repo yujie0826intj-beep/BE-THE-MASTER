@@ -13,13 +13,13 @@ Legacy root alias: `<LEGACY_FINANCE_ROOT>`; historical reference only, no new wr
 | Role | Public session label | Thread ref | Skill | Status | Current task | Notes |
 |---|---|---|---|---|---|---|
 | Z | Z_ORCHESTRATOR | local-only | `btm-z-orchestrator` | idle/accepted | BTM-V06-CHAIN-LOCK-001 | Post-S chain locked as current baseline; pre-S noise quarantined |
-| A-V06 | A_SOURCE_SCOUT_01 | local-only | `btm-a-source-scout` | idle/registered | none | Real thread id stored only in `local_registry/`; no task dispatched |
-| S-V06 | S_SIGNAL_ANALYST_01 | local-only | `btm-s-signal-analyst` | idle/accepted | BTM-V06-SB-REPLAY-002 | S structural gate passed; B small replay allowed |
-| B-V06 | B_TOPIC_GATE_01 | local-only | `btm-b-topic-gate` | idle/accepted | BTM-V06-B-CONFIRM-001 | B_CONFIRM completed: GO on narrowed question; D allowed only after user confirmation |
-| C-V06 | C_EVIDENCE_DATA_01 | local-only | `btm-c-evidence-data` | idle/accepted | BTM-V06-C-DIAGNOSTIC-001 | C diagnostic completed: EVIDENCE_SUPPORTS_NARROWER_PIVOT; no B_CONFIRM/D/E/F dispatch |
-| D-V06 | D_STYLE_ROUTER_01 | local-only | `btm-d-style-router` | idle/accepted | BTM-V06-D-REROUTE-001 | D reroute completed: STYLE_ROUTE_READY; stopped before E |
-| E-V06 | E_DRAFT_WRITER_01 | local-only | `btm-e-draft-writer` | idle/accepted | BTM-V06-E-CONTROLLED-DRAFT-001 | Controlled full draft passed Z gate; stopped before F |
-| F-V06 | F_PRODUCT_REVIEWER_01 | local-only | `btm-f-product-reviewer` | idle/accepted | BTM-V06-F-REVIEW-001 | F completed: PROCESS_PASS and PRODUCT_PASS; returned to Z for human final acceptance |
+| A-V06 | A_SOURCE_SCOUT | none | `btm-a-source-scout` | idle/unassigned | none | Wrong-root/context-heavy predecessor archived; create a clean replacement only for an authorized task |
+| S-V06 | S_SIGNAL_ANALYST | none | `btm-s-signal-analyst` | idle/unassigned | BTM-V06-SB-REPLAY-002 | Accepted S gate remains historical evidence; predecessor thread archived |
+| B-V06 | B_TOPIC_GATE | none | `btm-b-topic-gate` | idle/unassigned | BTM-V06-B-CONFIRM-001 | Accepted B and B_CONFIRM outputs remain historical evidence; predecessor thread archived |
+| C-V06 | C_EVIDENCE_DATA | none | `btm-c-evidence-data` | idle/unassigned | BTM-V06-C-DIAGNOSTIC-001 | Accepted diagnostic remains historical evidence; predecessor thread archived |
+| D-V06 | D_STYLE_ROUTER | none | `btm-d-style-router` | idle/unassigned | BTM-V06-D-REROUTE-001 | Accepted reroute remains historical evidence; predecessor thread archived |
+| E-V06 | E_DRAFT_WRITER | none | `btm-e-draft-writer` | idle/unassigned | BTM-V06-E-CONTROLLED-DRAFT-001 | Accepted controlled draft remains baseline evidence; predecessor thread archived |
+| F-V06 | F_PRODUCT_REVIEWER | none | `btm-f-product-reviewer` | idle/unassigned | BTM-V06-F-REVIEW-001 | Accepted review remains baseline evidence; predecessor thread archived |
 
 ## V05/R6 Freeze
 

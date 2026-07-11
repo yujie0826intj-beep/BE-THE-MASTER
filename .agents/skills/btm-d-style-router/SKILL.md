@@ -11,8 +11,8 @@ D-V06 chooses the style route. D does not perform final product review and does 
 
 ## Inputs
 
-- B_TOPIC_DECISION_CARD with confirmed GO.
-- C_EVIDENCE_PACK marked `SUFFICIENT`.
+- B_CONFIRM_CARD with `CONFIRM_GO_TO_D` and `D_ENTRY_ALLOWED: YES`.
+- C_EVIDENCE_PACK marked `SUFFICIENT`, or a Z-approved evidence diagnostic explicitly accepted by B_CONFIRM.
 - Available `resources/style_cards/` cards.
 
 ## Output: D_STYLE_ROUTE_CARD
@@ -30,10 +30,11 @@ Include:
 ## Hard Gates
 
 - Do not create one Skill per KOL. KOL style cards are resources.
+- If B_CONFIRM_CARD is missing or D entry is not allowed, return `STYLE_ROUTE_MISSING` and stop.
 - If no style card fits, return `STYLE_ROUTE_MISSING`.
 - Do not average multiple KOL styles into one generic finance style.
 - Do not review E's final draft; F owns product review.
 
 ## Handoff
 
-Send D style route to E only after B confirmation and C sufficiency are both present.
+Send D style route to E only after an explicit B confirmation and C sufficiency are both present.

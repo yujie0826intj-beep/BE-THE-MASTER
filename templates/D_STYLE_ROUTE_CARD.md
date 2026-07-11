@@ -7,8 +7,10 @@ STATUS: DRAFT
 
 ## INPUT_CHECK
 
-- B confirmed GO: yes/no
-- C evidence SUFFICIENT: yes/no
+- B_CONFIRM_CARD present: yes/no
+- B decision is CONFIRM_GO_TO_D: yes/no
+- D_ENTRY_ALLOWED is YES: yes/no
+- C evidence SUFFICIENT or approved diagnostic accepted by B_CONFIRM: yes/no
 
 ## TARGET_STYLE_CARD
 

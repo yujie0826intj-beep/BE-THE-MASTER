@@ -2,6 +2,35 @@
 
 Public-safe record of reusable V06 skill and template changes. Do not record real thread IDs, local absolute paths, private source text, article bodies, or raw materials here.
 
+## 2026-07-11
+
+### V06-HANDOFF-AND-CONTEXT-HYGIENE
+
+- Change type: handoff contract, template completion, and token-noise control.
+- Decision: make A hand only `SOURCE_READY_FOR_S` packets to S; add a public `B_CONFIRM_CARD` template; require B confirmation before D/E; prefer compact F inputs; archive wrong-root or context-compacted role threads before new production.
+- Reason: the locked chain already required S and B confirmation, but A's Skill/template and several public summaries still encoded the older A-to-B route. Long-lived role threads also caused avoidable context rehydration.
+- Files changed:
+  - `.agents/skills/btm-a-source-scout/SKILL.md`
+  - `.agents/skills/btm-d-style-router/SKILL.md`
+  - `.agents/skills/btm-e-draft-writer/SKILL.md`
+  - `.agents/skills/btm-f-product-reviewer/SKILL.md`
+  - `.agents/skills/btm-z-orchestrator/SKILL.md`
+  - `templates/A_SOURCE_PACKET.md`
+  - `templates/B_CONFIRM_CARD.md`
+  - `templates/D_STYLE_ROUTE_CARD.md`
+  - `templates/E_DRAFT_PACKAGE.md`
+  - `templates/F_PRODUCT_REVIEW_REPORT.md`
+  - `templates/Z_ROUND_REVIEW.md`
+  - `README.md`
+  - `AGENTS.md`
+  - `docs/V06_WORKFLOW.md`
+  - `docs/V06_ROLE_BOUNDARY.md`
+  - `docs/V06_QUALITY_GATES.md`
+  - `docs/V06_TOKEN_NOISE_CONTROL.md`
+  - `registry/THREAD_ARCHIVE.md`
+- Public-safe summary: new source work cannot skip S, D cannot start without B_CONFIRM, F should consume compact locked handoffs, and context-heavy role threads are archive-only.
+- Not preserved: article text, private paths, real thread IDs, user source material, or old full-thread content.
+
 ## 2026-07-04
 
 ### V06-S-ROLE-INTRODUCTION
